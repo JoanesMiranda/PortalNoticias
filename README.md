@@ -1,2 +1,2 @@
 # PortalNoticias
-Projeto Estudo - Site de Noticias
+Projeto Estudo - Site de Noticias com Nodejs
