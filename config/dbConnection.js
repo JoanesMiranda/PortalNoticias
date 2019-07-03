@@ -1,6 +1,6 @@
-var mysql = require('mysql');
+const mysql = require('mysql');
 
-	var connMysql = function(){
+const connMysql = function(){
 
 		return mysql.createConnection({
 
@@ -12,7 +12,6 @@ var mysql = require('mysql');
 		});
 	}
 
-module.exports = function(){
-	return connMysql;
-}
+module.exports = () => connMysql;
+
 

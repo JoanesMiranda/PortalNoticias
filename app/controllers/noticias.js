@@ -1,36 +1,34 @@
-module.exports.noticias = function(app, req, res){
+module.exports.noticias = function (app, req, res) {
 
-	var conexao = app.config.dbConnection();
-	var noticiasModel = new app.app.models.NoticiasDAO(conexao); 
+	const conexao = app.config.dbConnection();
+	const noticiasModel = new app.app.models.NoticiasDAO(conexao);
 
-	noticiasModel.getNoticias(function(error, result){
-		res.render('noticias/noticias',{noticias: result});
+	noticiasModel.getNoticias((error, result) => {
+		res.render('noticias/noticias', { noticias: result });
 	});
 
 }
 
+module.exports.noticia = function (app, req, res) {
 
-module.exports.noticia = function(app, req, res){
-	
-	var conexao = app.config.dbConnection();
-	var noticiaModel = new app.app.models.NoticiasDAO(conexao); 
+	const conexao = app.config.dbConnection();
+	const noticiaModel = new app.app.models.NoticiasDAO(conexao);
 
-	var noticia_id = req.query.noticia_id;
-	var noticia_excluir = req.query.noticia_excluir;
+	const noticia_id = req.query.noticia_id;
+	const noticia_excluir = req.query.noticia_excluir;
 
-	if(noticia_id){
-
-		noticiaModel.getNoticia(noticia_id, function(error, result){
-			res.render('noticias/noticia',{noticia: result});
+	if (noticia_id) {
+		noticiaModel.getNoticia(noticia_id, (error, result) => {
+			res.render('noticias/noticia', { noticia: result });
 		});
 
 	}
-	if(noticia_excluir){
-		noticiaModel.excluirNoticia(noticia_excluir, function(error, result){
+	if (noticia_excluir) {
+		noticiaModel.excluirNoticia(noticia_excluir, (error, result) => {
 			res.redirect('/noticias');
 		});
 	}
-	
+
 }
 
 

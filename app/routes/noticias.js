@@ -1,10 +1,10 @@
-module.exports = function(app){
+module.exports = function (app) {
 
-	app.get('/noticia', function(req, res){
+	app.get('/noticia', (req, res) => {
 		app.app.controllers.noticias.noticia(app, req, res);
 	});
 
-	app.get('/noticias', function(req, res){
+	app.get('/noticias', (req, res) => {
 		app.app.controllers.noticias.noticias(app, req, res);
 	});
 

@@ -1,13 +1,13 @@
-var express = require('express');
-var app = express();
-var consign = require('consign');
-var bodyParser = require('body-parser');
-var expressValidator = require('express-validator');
+const express = require('express');
+const app = express();
+const consign = require('consign');
+const bodyParser = require('body-parser');
+const expressValidator = require('express-validator');
 
 app.set('view engine','ejs');
-app.set('views','./app/views');
+app.set('views','app/views');
 
-app.use(express.static('./app/public'));
+app.use(express.static('app/public'));
 app.use(expressValidator());
 app.use(bodyParser.urlencoded({extended: true}));
 

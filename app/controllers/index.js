@@ -1,9 +1,9 @@
 module.exports.index = function(app,req, res){
 
-	var conexao = app.config.dbConnection();
-	var  noticiasLimit =  new app.app.models.NoticiasDAO(conexao);
+	const conexao = app.config.dbConnection();
+	const  noticiasLimit =  new app.app.models.NoticiasDAO(conexao);
 
-	noticiasLimit.getNoticiasLimit(function(erro, result){
+	noticiasLimit.getNoticiasLimit((erro, result) =>{
 		res.render('home/index',{noticias: {}, noticias: result});
 	});
 
