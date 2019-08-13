@@ -1,5 +1,5 @@
 {
-  "name": "noticias",
+  "name": "portal_noticias",
   "version": "1.0.0",
   "description": "Site de Noticias",
   "main": "app.js",

@@ -5,8 +5,8 @@ const connMysql = function () {
 
 		host: 'localhost',
 		user: 'root',
-		password: '',
-		database: 'portal_noticias'
+		password: 'root',
+		database: 'portal_noticia'
 
 	});
 }
